@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mina&display=swap" rel="stylesheet">
@@ -14,10 +13,63 @@
 
 
     <style>
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.5;
+   }
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
+
         h3 {
             padding-top: 80px;
             padding-bottom: 20px;
-            font-size: 1.3rem
+            font-size: 1.3rem;
+            text-align: center;
         }
 
         .chapter {
@@ -35,6 +87,88 @@
         .bng {
             color: blueviolet;
         }
+
+        .container{
+            padding: 15px;
+        }
+
+        .navbar{
+            display: block;
+            width: 100%;
+            position: fixed;
+            padding: 10px ;
+            background: #e1ebe7;
+            
+        }
+        .navbar ul{
+            padding: 0;
+            margin: 0;
+        }
+        .navbar ul li{
+            display: inline;
+            padding-bottom: 5px;
+        }
+        .navbar-brand{
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        p{
+            margin-bottom: 15px;
+        }
+        .bng{
+            text-align: justify;
+        }
+
+        #toggleM {
+        width: 28px;
+        height: 30px;
+        float: right;
+        margin-right: 20px;
+        }
+
+        #toggleM div {
+        width: 100%;
+        height: 5px;
+        background: #7809b1;
+        margin: 4px auto;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+        }
+
+        #toggleM.on .one {
+        transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        #toggleM.on .two {
+        opacity: 0;
+        }
+
+        #toggleM.on .three {
+        transform: rotate(-45deg) translate(7px, -8px);
+        }
+
+        #menu {
+        border-radius: 3px;
+        margin: auto;
+        display: none;
+        }
+        
+        select{
+            padding: 7px 5px 5px 5px;
+            border-radius: 10px;
+            border-color: #7d0d7d
+        }
+
+        button, input[type="button"]{
+            border-radius: 10px;
+            padding: 5px;
+            border-color: #7d0d7d;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        
     </style>
 
 
@@ -43,17 +177,10 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
-        <a class="navbar-brand" href="#">শ্রীমদ্ভগবদ্গীতা
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-            <ul class="navbar-nav mr-auto">
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a class="navbar-brand" href="#">শ্রীমদ্ভগবদ্গীতা</a>
                 <select name="dropDown" id="dropDown">
                     <option value="#dhyan">গীতার ধ্যান: </option>
                     <option value="#1st">প্রথমোঽধ্যাযঃ </option>           
@@ -63,63 +190,51 @@
                     <option value="#5th">পঞ্চমোঽধ্যাযঃ </option>            
                     <option value="#6th">ষষ্ঠোঽধ্যাযঃ </option>            
                     <option value="#7th">সপ্তমোঽধ্যাযঃ </option>             
-                    <option value="#8th">অষ্টমোঽধ্যাযঃ </option>
-                    
+                    <option value="#8th">অষ্টমোঽধ্যাযঃ </option>                    
                     <option value="#9th">নবমোঽধ্যাযঃ </option>
-                     
                     <option value="#10th">দশমোঽধ্যাযঃ </option>
-                     
                     <option value="#11th">একাদশোঽধ্যাযঃ </option>
-                     
                     <option value="#12th">দ্বাদশোঽধ্যাযঃ </option>
-                     
                     <option value="#13th">ত্রযোদশোঽধ্যাযঃ </option>
-                     
                     <option value="#14th">চতুর্দশোঽধ্যাযঃ </option>
-                     
                     <option value="#15th">পঞ্চদশোঽধ্যাযঃ </option>
-                     
                     <option value="#16th">ষোডশোঽধ্যাযঃ </option>
-                     
                     <option value="#17th">সপ্তদশোঽধ্যাযঃ </option>
-                     
                     <option value="#18th">অষ্টাদশোঽধ্যাযঃ </option>
-                     
                     <option value="#mahattyo">গীতা-মাহাত্ম্য </option>
+                </select>
+            </li>
+            <li>
+                <div id="toggleM">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+                <div id="menu">
+                    <button class="btn btn-line" id="bTns">
+                        বঙ্গানুবাদ সহ
+                    </button>
+                    <button class="btn btn-line" id="bOnly">
+                        শুধু বঙ্গানুবাদ
+                    </button>
+                    <br/>
+                    <select id="fs">
+                        <option>ফন্ট</option>
+                        <option value="Hind Siliguri">হিন্দ  শিলিগুড়ি </option>
+                        <option value="Mina">মিনা</option>
+                        <option value="Galada">গলদা</option>
+                    </select>
+                    
+                    <input type="button" class="increase" value=" + ">
+                    <input type="button" class="decrease" value=" - " />
+                    <input type="button" class="resetMe" value=" = ">
+                </div>
+            </li>
+            
+        </ul>
         
-                </select>
-                
-            <form id="myform" class="form-inline">
-                <select id="fs">
-                    <option>Select Font</option>
-                    <option value="Hind Siliguri">Hind Siliguri</option>
-                    <option value="Mina">Mina</option>
-                    <option value="Galada">Galada </option>
-                </select>
-            </form>
-            <form class="form-inline my-2 my-lg-0">
-                <input type="button" class="increase" value=" + ">
-                <input type="button" class="decrease" value=" - " />
-                <input type="button" class="resetMe" value=" = ">
-            </form>
-            <button class="btn btn-line" id="bTns">
-                বঙ্গানুবাদ সহ
-            </button>
-            <button class="btn btn-line" id="bOnly">
-                শুধু বঙ্গানুবাদ
-            </button>
-
-        </div>
+        
     </nav>
-
-
-
-
-
-
-
-
-
 
     <div class="container">
 
@@ -3129,8 +3244,7 @@
     <!----Footer Script-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             var originalSize = $('div').css('font-size');
@@ -3211,6 +3325,12 @@
             }
         };
 
+    </script>
+    <script>
+        $("#toggleM").click(function() {
+        $(this).toggleClass("on");
+        $("#menu").slideToggle();
+        });
     </script>
 
 
